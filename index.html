@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger King Virtual Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #d8232a;
+            color: white;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: auto;
+        }
+        
+        .order-btn {
+            background-color: #ffcc00;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+
+        }
+        .order-btn:hover {
+            background-color: #e6b800;
+        }
+        .order-number {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: black;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .food-image {
+            margin-top: 20px;
+            display: none;
+            height: 200px;
+            width: 300px;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <h1>Burger King Virtual Order</h1>
+    <div class="container">
+        <h3>Select Your Food</h3>
+        <label><input type="checkbox" value="https://as2.ftcdn.net/v2/jpg/01/69/56/95/1000_F_169569546_zaLG8x4tyIu3SDn1jYWXThVpMjCEbn8Q.jpg" class="checkbox"> Burger</label><br>
+        <label><input type="checkbox" value="https://t4.ftcdn.net/jpg/01/26/02/33/360_F_126023380_C1VoNoSBkz0hJziJTVDUUFcOo9EgIfxL.jpg" class="checkbox"> Fries</label><br>
+        <label><input type="checkbox" value="data:image/jpeg;base64,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" class="checkbox"> Coke</label><br>
+        <button class="order-btn" onclick="placeOrder()">Order Food</button>
+    </div>
+    <div class="order-number" id="orderNumber" style="display:none;"></div>
+    <div id="foodDisplay" class="food-image"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
